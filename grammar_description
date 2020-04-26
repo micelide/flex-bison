@@ -1,0 +1,16 @@
+2. Consider this grammar of boolean expressions:
+
+  ⟨Program⟩ ::= ⟨Expr⟩ .
+  ⟨Expr⟩ ::=  ⟨Expr⟩ && ⟨Expr⟩
+              | ⟨Expr ⟩ || ⟨Expr ⟩
+              | ⟨Expr ⟩ ˆ ⟨Expr ⟩ 
+              | ∼ ⟨Expr ⟩
+              | ⟨Const ⟩
+              | ( ⟨Expr ⟩ )
+  ⟨Const⟩ ::= F | T
+
+where the expression operators denote AND, OR, XOR, and NOT, re-
+spectively.
+
+Modify the grammar to make flex/bison happy, without changing the language itself.
+Use your modified grammar and flex/bison to implement an inter- preter for the language. For invalid inputs, you should print “syntax error”. For example, on input F || T., you should print T. (just T, not the period)
